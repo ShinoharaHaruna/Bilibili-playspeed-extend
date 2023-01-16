@@ -42,10 +42,10 @@ async function speedExtend() {
 
     document.getElementsByClassName("bpx-player-ctrl-playbackrate-menu")[0].innerHTML =
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"2.5\">2.5x</li>" +
-        "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"2\">2.0x</li>" +
+        "<li class=\"bpx-player-ctrl-playbackrate-menu-item bpx-state-active\" data-value=\"2\">2.0x</li>" +
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"1.5\">1.5x</li>" +
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"1.25\">1.25x</li>" +
-        "<li class=\"bpx-player-ctrl-playbackrate-menu-item bpx-state-active\" data-value=\"1\">1.0x</li>" +
+        "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"1\">1.0x</li>" +
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"0.75\">0.75x</li>" +
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"0.5\">0.5x</li>"
 };
