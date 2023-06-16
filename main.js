@@ -31,16 +31,30 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// TODO: 确实，设置 timeout 看起来很蠢。能用就行，以后再改
 // TODO: 以后也许给 YouTube 之类的也加上
 // TODO: 加一个手输倍率的功能
 
-window.setTimeout(speedExtend, 4000);
+const observer = new MutationObserver((mutationList) => {
+    mutationList.forEach((mutation) => {
+        if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+            const targetNode = mutation.target;
+            const elements = targetNode.getElementsByClassName(
+                "bpx-player-ctrl-playbackrate-menu"
+            );
+            if (elements.length > 0) {
+                speedExtend();
+            }
+        }
+    });
+});
+
+observer.observe(document.documentElement, { childList: true, subtree: true });
 
 async function speedExtend() {
     'use strict';
 
     document.getElementsByClassName("bpx-player-ctrl-playbackrate-menu")[0].innerHTML =
+        "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"3\">3.0x</li>" +
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"2.5\">2.5x</li>" +
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item bpx-state-active\" data-value=\"2\">2.0x</li>" +
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"1.5\">1.5x</li>" +
