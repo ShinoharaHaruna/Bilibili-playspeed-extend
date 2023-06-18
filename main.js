@@ -62,4 +62,7 @@ async function speedExtend() {
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"1\">1.0x</li>" +
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"0.75\">0.75x</li>" +
         "<li class=\"bpx-player-ctrl-playbackrate-menu-item\" data-value=\"0.5\">0.5x</li>"
+
+    // 默认2倍速
+    localStorage.setItem('mvPlayRate', '2.0');
 };
